@@ -5,6 +5,12 @@
 /.pnp
 .pnp.js
 
+#sass
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
 # testing
 /coverage
 
