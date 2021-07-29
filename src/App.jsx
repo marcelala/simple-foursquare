@@ -2,7 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 //project files
-import SearchForm from './components/SearchForm';
+import Hero from './components/Hero';
 
 const baseURL = "https://api.foursquare.com/v2/venues/explore/";
 
@@ -14,7 +14,7 @@ export default function App() {
     <div className="App">
       <header className="App-header">
       </header>
-      <SearchForm/>
+      <Hero/>
     </div>
   );
 }
