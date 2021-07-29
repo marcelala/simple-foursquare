@@ -28,8 +28,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export default function Card({ venueInfo }) {
-  const classes = useStyles();
-
+  //constants
+    const { name, distance, adress, latitude, longitude, category } = venue;
+    const classes = useStyles();
   return (
     <div>
       <Grid item key={card} xs={12} sm={6} md={4}>

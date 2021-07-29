@@ -3,21 +3,36 @@ import { TextField, FormControl, Button, Grid } from "@material-ui/core";
 import Search from "@material-ui/icons/Search";
 
 export default function SearchForm({}) {
-  const [query, setQuery] = useState({
+  //state
+    const [query, setQuery] = useState({
     latitude: "",
     longitude: "",
-  });
-
-  function handleChange(event) {
-    event.preventDefault();
-    const { name, value } = event.target;
-    setQuery({
-      ...query,
-      [name]: value,
     });
-    console.log(query);
-  }
-  function handleSubmit(event) {}
+    const [errors, setErrors] = useState({});
+//methods
+    const handleChange = (event) => {
+        event.preventDefault();
+        const { name, value } = event.target;
+        setQuery({
+            ...query,
+            [name]: value,
+        });
+        console.log(query);
+    };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (isValid()) {
+            await getResults(query);
+        }
+    };
+
+    const isValid = () => {
+        Object.values(errors).every((x) => x === "");
+    };
+
+    const getResults = () => {
+        
+    }
 
   return (
     <div>
