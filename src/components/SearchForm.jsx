@@ -1,25 +1,23 @@
-import React from "react";
-import {
-  TextField,
-  FormControl,
-  FormHelperText,
-  Button,
-  Grid,
-} from "@material-ui/core";
+import { React, useState } from "react";
+import { TextField, FormControl, Button, Grid } from "@material-ui/core";
 import Search from "@material-ui/icons/Search";
 
-export default function SearchForm() {
-  const [query, setQuery] = React.useState({
+export default function SearchForm({}) {
+  const [query, setQuery] = useState({
     latitude: "",
     longitude: "",
   });
-  const handleChange = (event) => {
-    const input = event.target.value;
+
+  function handleChange(event) {
+    event.preventDefault();
+    const { name, value } = event.target;
     setQuery({
       ...query,
-      [event.target.query]: input,
+      [name]: value,
     });
-  };
+    console.log(query);
+  }
+  function handleSubmit(event) {}
 
   return (
     <div>
@@ -27,18 +25,21 @@ export default function SearchForm() {
         container
         spacing={2}
         direction="column"
-        justifyContent="space-between"
+        justifyContent="center"
         alignItems="center"
       >
-        <form className="search-form" Validate autoComplete="off">
+        <form className="search-form" onSubmit={handleSubmit}>
           <FormControl>
             <Grid item>
               <TextField
                 id="latitude-input"
+                name="latitude"
                 label="What's your latitude?"
+                type="text"
                 value={query.latitude}
                 margin="normal"
                 variant="outlined"
+                helperText="Please type your latitude above"
                 required
                 onChange={handleChange}
               />
@@ -46,29 +47,28 @@ export default function SearchForm() {
             <Grid item>
               <TextField
                 id="longitude-input"
+                name="longitude"
                 label="What's your longitude?"
+                type="text"
                 value={query.longitude}
                 variant="outlined"
                 margin="normal"
+                helperText="Please type your longitude above"
                 required
                 onChange={handleChange}
-                />
-            <FormHelperText id="component-helper-text">
-              Please type your latitude and longitude above
-            </FormHelperText>
-                </Grid>
+              />
+            </Grid>
           </FormControl>
           <Grid item>
             <Button
+              type="submit"
               variant="contained"
-              color="tertiary"
+              color="primary"
               component="span"
               size="large"
               margin="normal"
               startIcon={<Search />}
-              onClick={() => {
-                alert("clicked");
-              }}
+              onClick={handleSubmit}
             >
               Search
             </Button>
