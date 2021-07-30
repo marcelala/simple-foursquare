@@ -1,5 +1,5 @@
 //npm packages
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { TextField, FormControl, Button, Grid } from "@material-ui/core";
 import Search from "@material-ui/icons/Search";
 
@@ -13,7 +13,10 @@ export default function SearchForm({ geolocationQuery }) {
     longitude: "",
   });
   const [errors, setErrors] = useState({});
+  
   //methods
+
+    
   const handleChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
@@ -21,6 +24,7 @@ export default function SearchForm({ geolocationQuery }) {
       ...query,
       [name]: value,
     });
+      console.log(query)
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,9 +39,7 @@ export default function SearchForm({ geolocationQuery }) {
 
   const getResults = () => {};
 
-  if ({ geolocationQuery } == !null) {
-    setQuery(query == { geolocationQuery });
-  }
+
   return (
     <div>
       <Grid
@@ -94,7 +96,6 @@ export default function SearchForm({ geolocationQuery }) {
             </Button>
           </Grid>
           <Grid item>
-            <Geolocation />
           </Grid>
         </form>
       </Grid>

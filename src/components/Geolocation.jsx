@@ -29,7 +29,6 @@ const [geolocationQuery, setGeolocationQuery] = useState({
             latitude: {latitude},
             longitude: {longitude}
           },
-          console.log(geolocationQuery),
           ),
         () => {
           setStatus("Unable to retrieve your location");
@@ -39,11 +38,10 @@ const [geolocationQuery, setGeolocationQuery] = useState({
   };
   return (
     <div>
-      <Button onClick={getLocation}>Get coordinates</Button>
-      <h1>Coordinates</h1>
+      <Button onClick={getLocation}>Get your coordinates</Button>
       <p>{status}</p>
-      {latitude && <p>Latitude: {latitude}</p>}
-    {longitude && <p>Longitude: {longitude}</p>}     
+        {latitude && <p>Latitude: {latitude}</p>}
+        {longitude && <p>Longitude: {longitude}</p>}     
     </div>
   );
 }
