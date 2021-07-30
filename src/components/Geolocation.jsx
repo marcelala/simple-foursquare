@@ -18,22 +18,20 @@ const [geolocationQuery, setGeolocationQuery] = useState({
       setStatus("Geolocation is not supported by your browser");
     } else {
       setStatus("Locating...");
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setStatus(null);
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-          },
-          setGeolocationQuery({
-            ...geolocationQuery,
-            latitude: {latitude},
-            longitude: {longitude}
-          },
-          ),
+      const coordinates = navigator.geolocation.getCurrentPosition(
+            (position)  => {
+                setStatus(null);
+                setLatitude(position.coords.latitude);
+                setLongitude(position.coords.longitude);
+            },
+      ).then(()=> setGeolocationQuery({
+        latitude: latitude,
+        longitude: longitude,
+      },
         () => {
           setStatus("Unable to retrieve your location");
         }
-      );
+      ));
     }
   };
   return (

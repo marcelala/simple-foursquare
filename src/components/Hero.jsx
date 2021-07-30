@@ -1,7 +1,6 @@
 //npm packages
 import React from "react";
 import { Container, Typography, Grid } from "@material-ui/core";
-import SearchForm from "./SearchForm";
 
 export default function Hero() {
   return (
@@ -20,13 +19,6 @@ export default function Hero() {
                   This is a simple app to help you find services near you. All you have to do is input your coordinates below.
                   This app is powered by Foursquare.
         </Typography>
-        <div className="search-form">
-          <Grid container spacing={2} justifyContent="center">
-            <Grid item>
-              <SearchForm />
-            </Grid>
-          </Grid>
-        </div>
       </Container>
     </div>
   );

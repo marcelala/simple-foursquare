@@ -1,12 +1,13 @@
 //npm packages
 import { React, useState, useEffect } from "react";
 import axios from "axios";
-import { Button } from "@material-ui/core";
+import { Grid, Button } from "@material-ui/core";
 
 //project files
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
+import SearchForm from "./components/SearchForm";
 const baseURL = "https://api.foursquare.com/v2/venues/explore/";
 
 export default function App() {
@@ -20,6 +21,9 @@ export default function App() {
   const [geolocationStatus, setGeolocationStatus] = useState(null);
 
   //methods
+
+  //js in plain english implementation
+  
   const getLocation = () => {
     if (!navigator.geolocation) {
       setGeolocationStatus("Geolocation is not supported by your browser");
@@ -45,25 +49,42 @@ export default function App() {
 
   return (
     <div className="App">
-      
       <Header />
-      <Hero />
-      <div className="geolocation">
-        <Button
-          type="submit"
-          variant="contained"
-          color="secondary"
-          component="span"
-          size="large"
-          margin="normal"
-          onClick={getLocation}
-        >
-          Get your coordinates
-        </Button>
-        <p>{geolocationStatus}</p>
-        {latitude && <p>Latitude: {latitude}</p>}
-        {longitude && <p>Longitude: {longitude}</p>}
-      </div>
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        alignContent="center"
+      >
+        <Grid item>
+          <Hero />
+        </Grid>
+        <div className="search-form">
+          <Grid container spacing={2} justifyContent="center">
+            <Grid item>
+              <SearchForm query= {query} setQuery={setQuery} />
+            </Grid>
+          </Grid>
+        </div>
+        <Grid item>
+          <div className="geolocation">
+            <Button
+              type="submit"
+              variant="contained"
+              color="secondary"
+              component="span"
+              size="large"
+              margin="normal"
+              onClick={getLocation}
+            >
+              Get your coordinates
+            </Button>
+            <p>{geolocationStatus}</p>
+            {latitude && <p>Latitude: {latitude}</p>}
+            {longitude && <p>Longitude: {longitude}</p>}
+          </div>
+        </Grid>
+      </Grid>
       <Footer />
     </div>
   );

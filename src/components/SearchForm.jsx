@@ -4,19 +4,13 @@ import { TextField, FormControl, Button, Grid } from "@material-ui/core";
 import Search from "@material-ui/icons/Search";
 
 //project files
-import Geolocation from "./Geolocation";
 
-export default function SearchForm({ geolocationQuery }) {
-  //state
-  const [query, setQuery] = useState({
-    latitude: "",
-    longitude: "",
-  });
+export default function SearchForm({ query, setQuery }) {
+  //local state
   const [errors, setErrors] = useState({});
-  
+
   //methods
 
-    
   const handleChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
@@ -24,7 +18,7 @@ export default function SearchForm({ geolocationQuery }) {
       ...query,
       [name]: value,
     });
-      console.log(query)
+    console.log(query);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,7 +32,6 @@ export default function SearchForm({ geolocationQuery }) {
   };
 
   const getResults = () => {};
-
 
   return (
     <div>
@@ -95,8 +88,7 @@ export default function SearchForm({ geolocationQuery }) {
               Search
             </Button>
           </Grid>
-          <Grid item>
-          </Grid>
+          <Grid item></Grid>
         </form>
       </Grid>
     </div>
