@@ -4,35 +4,33 @@ import Search from "@material-ui/icons/Search";
 
 export default function SearchForm({}) {
   //state
-    const [query, setQuery] = useState({
+  const [query, setQuery] = useState({
     latitude: "",
     longitude: "",
+  });
+  const [errors, setErrors] = useState({});
+  //methods
+  const handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    setQuery({
+      ...query,
+      [name]: value,
     });
-    const [errors, setErrors] = useState({});
-//methods
-    const handleChange = (event) => {
-        event.preventDefault();
-        const { name, value } = event.target;
-        setQuery({
-            ...query,
-            [name]: value,
-        });
-        console.log(query);
-    };
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (isValid()) {
-            await getResults(query);
-        }
-    };
-
-    const isValid = () => {
-        Object.values(errors).every((x) => x === "");
-    };
-
-    const getResults = () => {
-        
+    console.log(query);
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (isValid()) {
+      await getResults(query);
     }
+  };
+
+  const isValid = () => {
+    Object.values(errors).every((x) => x === "");
+  };
+
+  const getResults = () => {};
 
   return (
     <div>
@@ -42,6 +40,7 @@ export default function SearchForm({}) {
         direction="column"
         justifyContent="center"
         alignItems="center"
+        alignContent="center"
       >
         <form className="search-form" onSubmit={handleSubmit}>
           <FormControl>

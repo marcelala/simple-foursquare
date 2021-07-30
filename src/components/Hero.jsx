@@ -5,7 +5,7 @@ import SearchForm from "./SearchForm";
 
 export default function Hero() {
   return (
-    <div>
+    <div className="hero">
       <Container maxWidth="sm">
         <Typography
           component="h1"

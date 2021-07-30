@@ -1,8 +1,9 @@
 import { Link, Typography, Grid } from "@material-ui/core";
 import React from "react";
+import  Foursquare  from '../assets/powered-by-foursquare-grey.png';
 
 export default function Footer() {
-  const Copyright = () => {
+    const Copyright = () => {
     return (
       <Typography variant="body2" color="textSecondary" align="center">
         {"Copyright © "}
@@ -24,20 +25,9 @@ export default function Footer() {
         alignItems="center"
         margin="normal"
       >
-        <Grid item>
-          <Typography variant="h6" align="center" gutterBottom>
-            Simple Square
-          </Typography>
+        <Grid item xs>
+        <img src= { Foursquare } className="attribution" alt="text powered by foursquare"/>        
         </Grid>
-        <Grid item></Grid>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
         <Grid item>{Copyright()}</Grid>
       </Grid>
     </footer>
