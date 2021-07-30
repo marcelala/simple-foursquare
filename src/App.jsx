@@ -1,6 +1,7 @@
 //npm packages
-import React from 'react';
+import {React, useState} from 'react';
 import axios from 'axios';
+
 //project files
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -9,7 +10,7 @@ const baseURL = "https://api.foursquare.com/v2/venues/explore/";
 
 
 export default function App() {
-  
+
 
   return (
     <div className="App">

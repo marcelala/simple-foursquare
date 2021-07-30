@@ -1,8 +1,12 @@
+//npm packages
 import { React, useState } from "react";
 import { TextField, FormControl, Button, Grid } from "@material-ui/core";
 import Search from "@material-ui/icons/Search";
 
-export default function SearchForm({}) {
+//project files
+import Geolocation from "./Geolocation";
+
+export default function SearchForm({ geolocationQuery }) {
   //state
   const [query, setQuery] = useState({
     latitude: "",
@@ -17,7 +21,6 @@ export default function SearchForm({}) {
       ...query,
       [name]: value,
     });
-    console.log(query);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,6 +35,9 @@ export default function SearchForm({}) {
 
   const getResults = () => {};
 
+  if ({ geolocationQuery } == !null) {
+    setQuery(query == { geolocationQuery });
+  }
   return (
     <div>
       <Grid
@@ -86,6 +92,9 @@ export default function SearchForm({}) {
             >
               Search
             </Button>
+          </Grid>
+          <Grid item>
+            <Geolocation />
           </Grid>
         </form>
       </Grid>
