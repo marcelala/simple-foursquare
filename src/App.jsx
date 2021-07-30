@@ -1,19 +1,23 @@
 //npm packages
 import { React, useState, useEffect } from "react";
 import axios from "axios";
-import { Grid, Button } from "@material-ui/core";
+import { Grid, Button, makestyles } from "@material-ui/core";
 
 //project files
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import SearchForm from "./components/SearchForm";
-const baseURL = "https://api.foursquare.com/v2/venues/explore/";
+const endPoint = "https://api.foursquare.com/v2/venues/explore?";
 
 export default function App() {
   //state
-  const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
+  const [coordinates, setCoordinates] = useState({
+    currentLatitude: "",
+    currentLongitude: "",
+  });
   const [query, setQuery] = useState({
     latitude: "",
     longitude: "",
@@ -22,11 +26,11 @@ export default function App() {
 
   //methods
 
-  //js in plain english implementation
-  
-  const getLocation = () => {
+  //based on js in plain english implementation
+  const getLocation = useEffect(() => {
     if (!navigator.geolocation) {
       setGeolocationStatus("Geolocation is not supported by your browser");
+      return;
     } else {
       setGeolocationStatus("Locating...");
       navigator.geolocation.getCurrentPosition(
@@ -35,37 +39,48 @@ export default function App() {
           setLatitude(position.coords.latitude);
           setLongitude(position.coords.longitude);
         },
-        setQuery({
-          ...query,
-          latitude: { latitude },
-          longitude: { longitude },
-        }),
+        
         () => {
           setGeolocationStatus("Unable to retrieve your location");
         }
       );
+      
+      /*const coordinates = setQuery({
+        ...query,
+        latitude: latitude,
+        longitude: longitude,
+      });*/
+    } console.log("console:" + latitude + "  " + longitude);
+  }, []);
+  
+  /*useEffect(() => {
+    if (navigator.geolocation) {
+      setCoordinates({
+        currentLatitude: latitude,
+        currentLongitude: longitude,
+      },
+        () => {
+          setQuery({ coordinates });
+        },
+        );
     }
-  };
+  }, []);*/
+
+
+
+  //console.log("q:" + query);
+  //console.log("c:" + coordinates);
+
+
 
   return (
     <div className="App">
       <Header />
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-        alignContent="center"
-      >
+      <Grid container justifyContent="center" alignItems="center">
         <Grid item>
           <Hero />
         </Grid>
-        <div className="search-form">
-          <Grid container spacing={2} justifyContent="center">
-            <Grid item>
-              <SearchForm query= {query} setQuery={setQuery} />
-            </Grid>
-          </Grid>
-        </div>
+        <SearchForm query={query} setQuery={setQuery} />
         <Grid item>
           <div className="geolocation">
             <Button
