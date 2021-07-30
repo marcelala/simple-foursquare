@@ -1,6 +1,6 @@
 //npm packages
 import React from "react";
-import { Container, Typography, Grid } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 
 export default function Hero() {
   return (
