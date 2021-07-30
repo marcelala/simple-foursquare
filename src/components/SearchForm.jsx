@@ -6,8 +6,9 @@ import Search from "@material-ui/icons/Search";
 //project files
 
 export default function SearchForm({ query, setQuery }) {
-  //local state
+    //local state
   const [errors, setErrors] = useState({});
+  const { latitude: latitude, longitude: longitude } = query;
 
   //methods
 
@@ -23,7 +24,7 @@ export default function SearchForm({ query, setQuery }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isValid()) {
-      await getResults(query);
+      await getResults();
     }
   };
 
@@ -34,15 +35,8 @@ export default function SearchForm({ query, setQuery }) {
   const getResults = () => {};
 
   return (
-    <div>
-      <Grid
-        container
-        spacing={2}
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-        alignContent="center"
-      >
+      <Grid item>
+              <section>
         <form className="search-form" onSubmit={handleSubmit}>
           <FormControl>
             <Grid item>
@@ -51,7 +45,7 @@ export default function SearchForm({ query, setQuery }) {
                 name="latitude"
                 label="What's your latitude?"
                 type="text"
-                value={query.latitude}
+                value={latitude}
                 margin="normal"
                 variant="outlined"
                 helperText="Please type your latitude above"
@@ -65,7 +59,7 @@ export default function SearchForm({ query, setQuery }) {
                 name="longitude"
                 label="What's your longitude?"
                 type="text"
-                value={query.longitude}
+                value={longitude}
                 variant="outlined"
                 margin="normal"
                 helperText="Please type your longitude above"
@@ -88,9 +82,8 @@ export default function SearchForm({ query, setQuery }) {
               Search
             </Button>
           </Grid>
-          <Grid item></Grid>
-        </form>
-      </Grid>
-    </div>
+              </form>
+    </section>
+              </Grid>
   );
 }
