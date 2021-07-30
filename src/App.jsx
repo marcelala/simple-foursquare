@@ -76,7 +76,7 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-      <Grid container justifyContent="center" alignItems="center">
+      <Grid container direction= "column" justifyContent="center" alignItems="center">
         <Grid item>
           <Hero />
         </Grid>
