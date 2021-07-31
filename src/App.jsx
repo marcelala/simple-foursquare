@@ -4,31 +4,48 @@ import axios from "axios";
 import { Grid, Button, makestyles } from "@material-ui/core";
 
 //project files
+import GeolocationHook from "./components/GeolocationHook";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import SearchForm from "./components/SearchForm";
 
-const endPoint = "https://api.foursquare.com/v2/venues/explore?";
+
 
 export default function App() {
   //state
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
-  const [currentCoordinates, setCoordinates] = useState({
-    currentLatitude: "",
-    currentLongitude: ""
-  });
+  const { latitude: currentLatitude, longitude: currentLongitude, location: currentLocation } = GeolocationHook();
+  //const [latitude, setLatitude] = useState("");
+  //const [longitude, setLongitude] = useState("");
+  
+  const currentCoordinates =([currentLatitude, currentLongitude]).toString();
+
   const [query, setQuery] = useState({
     latitude: "",
     longitude: "",
   });
-  const [geolocationStatus, setGeolocationStatus] = useState(null);
+  const [geolocationStatus, setGeolocationStatus] = useState();
+
 
   //methods
+  
 
-  //based on js in plain english implementation
-useEffect(() => {
+  const getVenues=(currentCoordinates) => {
+    const endPoint = "https://api.foursquare.com/v2/venues/explore?";
+    const params = {
+      client_id: "M40Z0XRBE12YDC1RKF5PLQ2ODXMRB0QVK04IOAPAJ1IHZZSM",
+      client_secret: "ZW0QO52LFOLOEEO02IRVPD2UGSHU0WEE4Y2FDEUHIE2QLJKC",
+      ll: this.currentCoordinates,
+      v: "20180323"
+    };
+    axios.get(endPoint + new URLSearchParams(params))
+      .then(response => (console.log(response)
+      ));
+  };
+
+
+
+  /*useEffect(() => {
     if (!navigator.geolocation) {
       setGeolocationStatus("Geolocation is not supported by your browser");
       return;
@@ -49,7 +66,7 @@ useEffect(() => {
   setGeolocationStatus("Unable to retrieve your location");
   },[]);
 
-console.log("coords:" + currentCoordinates);
+console.log("coords:" + currentCoordinates);*/
 
 
 
@@ -79,9 +96,12 @@ console.log("coords:" + currentCoordinates);
             >
               Get your coordinates
             </Button>
-            <p>{geolocationStatus}</p>
-            {latitude && <p>Latitude: {latitude}</p>}
-            {longitude && <p>Longitude: {longitude}</p>}
+           <p>{geolocationStatus}</p>
+            {currentLatitude && <p>Latitude: {currentLatitude}</p>}
+            {currentLongitude && <p>Longitude: {currentLongitude}</p>}
+            {currentCoordinates && <p>Current Coordinates: {currentCoordinates}</p>}
+            {currentLocation && <p>Current Location: {currentLocation}</p>}
+
           </div>
         </Grid>
       </Grid>

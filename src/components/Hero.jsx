@@ -16,8 +16,8 @@ export default function Hero() {
           Simple Square
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                  This is a simple app to help you find services near you. All you have to do is input your coordinates below.
-                  This app is powered by Foursquare.
+          This is a simple app to help you find services near you.
+          All you have to do is input your coordinates below.
         </Typography>
       </Container>
     </div>

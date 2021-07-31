@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
 const GeolocationHook = () => {
-    const [location, setLocation] = useState("");
-    // store error message in state
-    const [error, setError] = useState();
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
+  // store error message in state
+  const [error, setError] = useState();
   
-    const handleSuccess = (pos) => {
-      const { latitude, longitude } = pos.coords;
-      setLocation(
-        [latitude,
-        longitude]
-        );
+  const location = (latitude,longitude) => [latitude, longitude].toString();
+  
+    const handleSuccess = (position) => {
+          setLatitude(position.coords.latitude);
+          setLongitude(position.coords.longitude);
     };
   
     const handleError = (error) => {
@@ -24,9 +24,14 @@ const GeolocationHook = () => {
         return;
       }
       // Call Geolocation API
-      geolocation.getCurrentPosition(handleSuccess, handleError);
-    }, []);
-    return { location, error };
+    geolocation.getCurrentPosition(handleSuccess, handleError);
+  }, []);
+  
+  useEffect(() => {
+    location(latitude, longitude);
+  }, [latitude, longitude, location]);
+  
+    return { latitude, longitude, location,  error };
 };
   
 export default GeolocationHook;
