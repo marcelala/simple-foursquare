@@ -5,34 +5,40 @@ import Search from "@material-ui/icons/Search";
 
 //project files
 
-export default function SearchForm({ query, setQuery }) {
+export default function SearchForm({ query, setQuery,getResults }) {
     //local state
+  const [input, setInput] = useState({
+    latitude: "",
+    longitude: "",
+  });
+  const{latitude,longitude}= input
   const [errors, setErrors] = useState({});
-  const { latitude, longitude } = query;
 
   //methods
   //controlled form
   const handleChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
-    setQuery({
-      ...query,
+    setInput({
+      ...input,
       [name]: value,
     });
-    console.log(query);
+    console.log(input);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isValid()) {
-      await getResults();
+    if ((input==!null)) {
+      setQuery(latitude+ "," +longitude);
+      console.log(query);
+      //await getResults.bind(null,query);
     }
   };
 
-  const isValid = () => {
+  /*const isValid = () => {
     Object.values(errors).every((x) => x === "");
-  };
+  };*/
 
-  const getResults = () => {};
+  //const getResults = () => {};
 
   return (
       <Grid item>
