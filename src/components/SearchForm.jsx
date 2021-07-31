@@ -1,5 +1,5 @@
 //npm packages
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import { TextField, FormControl, Button, Grid } from "@material-ui/core";
 import Search from "@material-ui/icons/Search";
 
@@ -8,10 +8,10 @@ import Search from "@material-ui/icons/Search";
 export default function SearchForm({ query, setQuery }) {
     //local state
   const [errors, setErrors] = useState({});
-  const { latitude: latitude, longitude: longitude } = query;
+  const { latitude, longitude } = query;
 
   //methods
-
+  //controlled form
   const handleChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;

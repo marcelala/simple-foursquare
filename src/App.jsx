@@ -1,5 +1,5 @@
 //npm packages
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect,useReducer } from "react";
 import axios from "axios";
 import { Grid, Button, makestyles } from "@material-ui/core";
 
@@ -8,15 +8,16 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import SearchForm from "./components/SearchForm";
+
 const endPoint = "https://api.foursquare.com/v2/venues/explore?";
 
 export default function App() {
   //state
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
-  const [coordinates, setCoordinates] = useState({
+  const [currentCoordinates, setCoordinates] = useState({
     currentLatitude: "",
-    currentLongitude: "",
+    currentLongitude: ""
   });
   const [query, setQuery] = useState({
     latitude: "",
@@ -27,49 +28,34 @@ export default function App() {
   //methods
 
   //based on js in plain english implementation
-  const getLocation = useEffect(() => {
+useEffect(() => {
     if (!navigator.geolocation) {
       setGeolocationStatus("Geolocation is not supported by your browser");
       return;
     } else {
       setGeolocationStatus("Locating...");
-      navigator.geolocation.getCurrentPosition(
+      window.navigator.geolocation.getCurrentPosition(
         (position) => {
           setGeolocationStatus(null);
           setLatitude(position.coords.latitude);
           setLongitude(position.coords.longitude);
-        },
-        
-        () => {
-          setGeolocationStatus("Unable to retrieve your location");
-        }
-      );
-      
-      /*const coordinates = setQuery({
-        ...query,
-        latitude: latitude,
-        longitude: longitude,
-      });*/
-    } console.log("console:" + latitude + "  " + longitude);
-  }, []);
-  
-  /*useEffect(() => {
-    if (navigator.geolocation) {
-      setCoordinates({
-        currentLatitude: latitude,
-        currentLongitude: longitude,
-      },
-        () => {
-          setQuery({ coordinates });
+          setCoordinates({
+            currentLatitude: position.coords.latitude,
+            currentLongitude: position.coords.longitude
+          });
         },
         );
-    }
-  }, []);*/
+      }
+  setGeolocationStatus("Unable to retrieve your location");
+  },[]);
+
+console.log("coords:" + currentCoordinates);
 
 
 
   //console.log("q:" + query);
   //console.log("c:" + coordinates);
+  //console.log("coords:" + currentCoordinates);
 
 
 
@@ -90,7 +76,6 @@ export default function App() {
               component="span"
               size="large"
               margin="normal"
-              onClick={getLocation}
             >
               Get your coordinates
             </Button>
