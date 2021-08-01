@@ -23,6 +23,7 @@ export default function SearchForm({ getResults,handleClick }) {
   const onlyDigits = /^-?(([-+]?)([\d]{1,3})((\.)(\d+))?)/.test(input);
     return onlyDigits
   }
+  
 //Validation of the input, needs more work
   /*
   const getErrors = (input.latitude, input.longitude) => {

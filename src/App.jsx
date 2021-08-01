@@ -37,12 +37,15 @@ export default function App() {
   function onFail(error) {
     if (DEBUG_MODE) {
       setResults(BackupData);
+      console.log(error);
     } else {
+            console.log(error);
           <div className="bad-request">
             <p>"Oops, something went wrong with your request"</p>
           </div>
     }
   }
+  
   return (
     <div className="App">
       <Header />
