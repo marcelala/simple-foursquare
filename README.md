@@ -1,6 +1,6 @@
-#Simple Square
+# Simple Square
 
-##Overview
+## Overview
 
 Simple Square is a React.js single page web application where users can input a location query (latitude,longitude) and find venues nearby. This application is powered by Foursquare.
 
@@ -42,7 +42,7 @@ npm start
 * [axios](https://github.com/axios/axios), a promise based HTTP client for the browser and node.js.
 * [Material-UI](https://github.com/mui-org/material-ui)
 ## APIs used
-* Places API by FourSquare: the [Get Venue Recommendations](https://developer.foursquare.com/docs/api/venues/explore) returns a list of recommended venues near the current location.
+* Places API by FourSquare: the [Get Venue Recommendations](https://developer.foursquare.com/docs/api-reference/venues/search/) returns a list of recommended venues near the current location.
 ## Credits & Helpful Links
 
 * The project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). For more information on how to perform common tasks, visit [this page](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).

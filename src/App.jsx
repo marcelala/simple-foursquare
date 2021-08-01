@@ -31,7 +31,7 @@ export default function App() {
     };
     axios.get(endPoint + new URLSearchParams(params))
       .then(response => setResults(response.data.response.venues))
-      //.catch((error) => onFail(error));
+      .catch((error) => onFail(error));
   };
 
   function onFail(error) {
@@ -42,9 +42,6 @@ export default function App() {
       setStatus(2);
     }
   }
-
-  //console.log("coords query:" + query);
-
   return (
     <div className="App">
       <Header />
@@ -53,7 +50,7 @@ export default function App() {
           <Hero />
         </Grid>
         <SearchForm getResults={getResults} />
-        <SearchResult results={results}/>
+        {results && <SearchResult results={results}/>}
       </Grid>
       <Footer />
     </div>

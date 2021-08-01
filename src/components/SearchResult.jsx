@@ -12,20 +12,23 @@ const useStyles = makeStyles((theme) => ({
   }));
 export default function SearchResult( {results}) {
     const classes = useStyles();
-    const venueArray= results.map((venue) => (
-    <VenueCard key={venue.id} venue={venue}/>
-    ))
-    if (!results)
-		return (
-			<div>
-				<alert color="warning">Nothing Found!</alert>
-			</div>
-		);
+    //unsorted array of venue Cards
+    const venueCards = results.map((venue) => (
+        <VenueCard key={venue.id} venue={venue} />
+    ));
+
+    const sortedVenueArray = results.sort((a,b) => a.location.distance < b.location.distance? -1:1);
+    
+    const sortedVenueCards= sortedVenueArray.map((venue) => (
+        <VenueCard key={venue.id} venue={venue} />
+    ));
+
+    
     return (
         <div>
             <Container className={classes.cardGrid} maxWidth="md">
                 <Grid container spacing={4}>
-                    {venueArray}
+                    {sortedVenueCards.length > 0?  sortedVenueCards : <p> No venues were found...</p>}
                 </Grid>
             </Container>
         </div>
