@@ -1,10 +1,9 @@
 //npm packages
 import { React, useState } from "react";
 import axios from "axios";
-import { Grid, Button, makeStyles } from "@material-ui/core";
+import { Grid} from "@material-ui/core";
 
 //project files
-import GeolocationHook from "./components/GeolocationHook";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
@@ -16,7 +15,6 @@ import SearchResult from "./components/SearchResult";
 export default function App() {
   //state
   const [results, setResults] = useState([]);
-  const [location, setLocation] = useState("");
   const [status, setStatus] = useState(0); // 0 = "loading", 1 = "data ok", 2 = "data error"
   const DEBUG_MODE = false; // to show backup data in case of a server failure.
 

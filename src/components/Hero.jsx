@@ -16,8 +16,8 @@ export default function Hero() {
           Simple Square
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" paragraph>
-          This is a simple app to help you find services near you.
-          All you have to do is input your coordinates below.
+          This is a simple app to help you find venues near you.
+          All you have to do is input your coordinates below and search.
         </Typography>
       </Container>
     </div>

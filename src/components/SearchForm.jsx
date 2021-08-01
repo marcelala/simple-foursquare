@@ -42,9 +42,9 @@ export default function SearchForm({ getResults,handleClick }) {
       };
 
   return (
-      <Grid item>
-              <section>
-        <form className="search-form" onSubmit={getResults.bind(null,query)}>
+    <Grid item>
+      <section>
+        <form className="search-form" onSubmit={getResults.bind(null, query)}>
           <FormControl>
             <Grid item>
               <TextField
@@ -55,7 +55,7 @@ export default function SearchForm({ getResults,handleClick }) {
                 value={input.latitude}
                 margin="normal"
                 variant="outlined"
-                helperText="Please type your latitude above"
+                helperText="Example: 59.334591"
                 required
                 onChange={handleChange.bind(input)}
               />
@@ -69,7 +69,7 @@ export default function SearchForm({ getResults,handleClick }) {
                 value={input.longitude}
                 variant="outlined"
                 margin="normal"
-                helperText="Please type your longitude above"
+                helperText="Example: 18.063240"
                 required
                 onChange={handleChange.bind(input)}
               />
@@ -104,11 +104,11 @@ export default function SearchForm({ getResults,handleClick }) {
               Get your coordinates
             </Button>
           </div>
-        </Grid>
+          </Grid>
         <div>
-        </div>
+          </div>
     </section>
-              </Grid>
+          </Grid>
   );
 }
         //{currentLocation && <p>Current Location: {currentLocation}</p>}

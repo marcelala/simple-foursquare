@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 //project files
 export default function VenueCard({ venue }) {
   //constants
-  const { name, id, location, url} = venue;
+  const { name, location} = venue;
   const classes = useStyles();
 
   return (
@@ -41,10 +41,12 @@ export default function VenueCard({ venue }) {
             {name}
           </Typography>
           {location.distance && <Typography>Distance: {location.distance} meters</Typography>}
-          <Typography>{location.address}</Typography>
-          <Typography>{location.postalCode}</Typography>
-          <Typography>{location.city}, {location.country}</Typography>
-          <Typography>{location.url}</Typography>
+          <Typography variant="body2" color="textSecondary" component="p">Coordinates: </Typography>
+          <Typography >{location.lat},{location.lng}</Typography>
+          <Typography variant="body2" color="textSecondary" component="p">{location.address}</Typography>
+          <Typography variant="body2" color="textSecondary" component="p">{location.postalCode}</Typography>
+          <Typography variant="body2" color="textSecondary" component="p">{location.city}, {location.country}</Typography>
+          <Typography variant="body2" color="textSecondary" component="p">{location.url}</Typography>
         </CardContent>
       </Card>
     </Grid>
