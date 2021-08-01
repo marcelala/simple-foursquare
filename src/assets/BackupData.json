@@ -1,0 +1,509 @@
+[
+  {
+    "id": "4ba0e7bdf964a5200b8637e3",
+    "name": "Rissne T-bana",
+    "contact": {
+      "phone": "086001000",
+      "formattedPhone": "08-600 10 00",
+      "twitter": "sl_ab",
+      "facebook": "93774483456",
+      "facebookUsername": "KanalSL",
+      "facebookName": "SL"
+    },
+    "location": {
+      "address": "Rissne Centrum",
+      "lat": 59.375697650241754,
+      "lng": 17.94039744472396,
+      "labeledLatLngs": [
+        {
+          "label": "display",
+          "lat": 59.375697650241754,
+          "lng": 17.94039744472396
+        }
+      ],
+      "distance": 264,
+      "postalCode": "174 58",
+      "cc": "SE",
+      "city": "Rissne",
+      "state": "Stockholm",
+      "country": "Sweden",
+      "contextLine": "Rissne",
+      "contextGeoId": -1053517807,
+      "formattedAddress": [
+        "<span itemprop=\"streetAddress\">Rissne Centrum</span>",
+        "<span itemprop=\"postalCode\">174 58</span> <span itemprop=\"addressLocality\">Rissne</span>"
+      ]
+    },
+    "canonicalUrl": "https://foursquare.com/v/rissne-tbana/4ba0e7bdf964a5200b8637e3",
+    "canonicalPath": "/v/rissne-tbana/4ba0e7bdf964a5200b8637e3",
+    "categories": [
+      {
+        "id": "4bf58dd8d48988d1fd931735",
+        "name": "Metro Station",
+        "pluralName": "Metro Stations",
+        "shortName": "Metro",
+        "icon": {
+          "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/subway_",
+          "mapPrefix": "https://ss3.4sqi.net/img/categories_map/travel/subway",
+          "suffix": ".png"
+        },
+        "primary": true
+      }
+    ],
+    "verified": false,
+    "stats": { "tipCount": 3, "usersCount": 227, "checkinsCount": 2339 },
+    "url": "http://sl.se",
+    "urlSig": "v4ODLFhfYxfyrA30ODbYYJfOKGI=",
+    "venueRatingBlacklisted": true,
+    "beenHere": { "lastCheckinExpiredAt": 0 },
+    "specials": { "count": 0, "items": [] },
+    "hereNow": { "count": 0, "summary": "Nobody here", "groups": [] },
+    "referralId": "v-1627808788",
+    "venueChains": [{ "id": "5efdfdf5a1f7633843189b79" }],
+    "hasPerk": false
+  },
+  {
+    "id": "4e188b2b1f6eb955987afafa",
+    "name": "Skvadronsbacken",
+    "contact": {},
+    "location": {
+      "address": "Skvadronsbacken 21",
+      "lat": 59.37400067656403,
+      "lng": 17.94326617765138,
+      "labeledLatLngs": [
+        {
+          "label": "display",
+          "lat": 59.37400067656403,
+          "lng": 17.94326617765138
+        }
+      ],
+      "distance": 22,
+      "postalCode": "172 37",
+      "cc": "SE",
+      "city": "Sundbyberg",
+      "state": "Stockholm",
+      "country": "Sweden",
+      "contextLine": "Sundbyberg",
+      "contextGeoId": -1264405233,
+      "formattedAddress": [
+        "<span itemprop=\"streetAddress\">Skvadronsbacken 21</span>",
+        "<span itemprop=\"postalCode\">172 37</span> <span itemprop=\"addressLocality\">Sundbyberg</span>"
+      ]
+    },
+    "canonicalUrl": "https://foursquare.com/v/skvadronsbacken/4e188b2b1f6eb955987afafa",
+    "canonicalPath": "/v/skvadronsbacken/4e188b2b1f6eb955987afafa",
+    "categories": [
+      {
+        "id": "4d954b06a243a5684965b473",
+        "name": "Residential Building (Apartment / Condo)",
+        "pluralName": "Residential Buildings (Apartments / Condos)",
+        "shortName": "Residential",
+        "icon": {
+          "prefix": "https://ss3.4sqi.net/img/categories_v2/building/apartment_",
+          "mapPrefix": "https://ss3.4sqi.net/img/categories_map/building/default",
+          "suffix": ".png"
+        },
+        "primary": true
+      }
+    ],
+    "verified": false,
+    "stats": { "tipCount": 0, "usersCount": 14, "checkinsCount": 93 },
+    "venueRatingBlacklisted": true,
+    "beenHere": { "lastCheckinExpiredAt": 0 },
+    "specials": { "count": 0, "items": [] },
+    "hereNow": { "count": 0, "summary": "Nobody here", "groups": [] },
+    "referralId": "v-1627808788",
+    "venueChains": [],
+    "hasPerk": false
+  },
+  {
+    "id": "4c78f554df08a1cd1501d95d",
+    "name": "Rissne ängar",
+    "contact": {},
+    "location": {
+      "lat": 59.375957157630864,
+      "lng": 17.947654278299968,
+      "labeledLatLngs": [
+        {
+          "label": "display",
+          "lat": 59.375957157630864,
+          "lng": 17.947654278299968
+        }
+      ],
+      "distance": 348,
+      "cc": "SE",
+      "country": "Sweden",
+      "contextLine": "",
+      "contextGeoId": -464272376,
+      "formattedAddress": [""]
+    },
+    "canonicalUrl": "https://foursquare.com/v/rissne-%C3%A4ngar/4c78f554df08a1cd1501d95d",
+    "canonicalPath": "/v/rissne-%C3%A4ngar/4c78f554df08a1cd1501d95d",
+    "categories": [
+      {
+        "id": "4bf58dd8d48988d15f941735",
+        "name": "Field",
+        "pluralName": "Fields",
+        "shortName": "Field",
+        "icon": {
+          "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/field_",
+          "mapPrefix": "https://ss3.4sqi.net/img/categories_map/parks_outdoors/default",
+          "suffix": ".png"
+        },
+        "primary": true
+      }
+    ],
+    "verified": false,
+    "stats": { "tipCount": 0, "usersCount": 39, "checkinsCount": 110 },
+    "venueRatingBlacklisted": true,
+    "beenHere": { "lastCheckinExpiredAt": 0 },
+    "specials": { "count": 0, "items": [] },
+    "hereNow": { "count": 0, "summary": "Nobody here", "groups": [] },
+    "referralId": "v-1627808788",
+    "venueChains": [],
+    "hasPerk": false
+  },
+  {
+    "id": "57e2973c498eec17c6122533",
+    "name": "Rissne Thai Wok & Sushi",
+    "contact": { "phone": "087333210", "formattedPhone": "08-733 32 10" },
+    "location": {
+      "address": "Kavallerivägen 20",
+      "lat": 59.3755,
+      "lng": 17.941128,
+      "labeledLatLngs": [
+        { "label": "display", "lat": 59.3755, "lng": 17.941128 }
+      ],
+      "distance": 222,
+      "postalCode": "174 58",
+      "cc": "SE",
+      "city": "Sundbyberg",
+      "state": "Stockholm",
+      "country": "Sweden",
+      "contextLine": "Sundbyberg",
+      "contextGeoId": -708202893,
+      "formattedAddress": [
+        "<span itemprop=\"streetAddress\">Kavalleriv&auml;gen 20</span>",
+        "<span itemprop=\"postalCode\">174 58</span> <span itemprop=\"addressLocality\">Sundbyberg</span>"
+      ]
+    },
+    "canonicalUrl": "https://foursquare.com/v/rissne-thai-wok--sushi/57e2973c498eec17c6122533",
+    "canonicalPath": "/v/rissne-thai-wok--sushi/57e2973c498eec17c6122533",
+    "categories": [
+      {
+        "id": "4bf58dd8d48988d1d2941735",
+        "name": "Sushi Restaurant",
+        "pluralName": "Sushi Restaurants",
+        "shortName": "Sushi",
+        "icon": {
+          "prefix": "https://ss3.4sqi.net/img/categories_v2/food/sushi_",
+          "mapPrefix": "https://ss3.4sqi.net/img/categories_map/food/sushi",
+          "suffix": ".png"
+        },
+        "primary": true
+      }
+    ],
+    "verified": false,
+    "stats": { "tipCount": 2, "usersCount": 1, "checkinsCount": 3 },
+    "allowMenuUrlEdit": true,
+    "beenHere": { "lastCheckinExpiredAt": 0 },
+    "specials": { "count": 0, "items": [] },
+    "hereNow": { "count": 0, "summary": "Nobody here", "groups": [] },
+    "referralId": "v-1627808788",
+    "venueChains": [],
+    "hasPerk": false
+  },
+  {
+    "id": "5d25a4f97ad19400235baebf",
+    "name": "Elenas naglar och hudvård",
+    "contact": {},
+    "location": {
+      "crossStreet": "Kavallerivägen 8B",
+      "lat": 59.375511,
+      "lng": 17.94052,
+      "labeledLatLngs": [
+        { "label": "display", "lat": 59.375511, "lng": 17.94052 }
+      ],
+      "distance": 243,
+      "postalCode": "174 58",
+      "cc": "SE",
+      "city": "Sundbyberg",
+      "state": "Stockholm",
+      "country": "Sweden",
+      "contextLine": "Sundbyberg",
+      "contextGeoId": -1585059908,
+      "formattedAddress": [
+        "<span itemprop=\"streetAddress\">Kavalleriv&auml;gen 8B</span>",
+        "<span itemprop=\"postalCode\">174 58</span> <span itemprop=\"addressLocality\">Sundbyberg</span>"
+      ]
+    },
+    "canonicalUrl": "https://foursquare.com/v/elenas-naglar-och-hudv%C3%A5rd/5d25a4f97ad19400235baebf",
+    "canonicalPath": "/v/elenas-naglar-och-hudv%C3%A5rd/5d25a4f97ad19400235baebf",
+    "categories": [
+      {
+        "id": "4f04aa0c2fb6e1c99f3db0b8",
+        "name": "Nail Salon",
+        "pluralName": "Nail Salons",
+        "shortName": "Nail Salon",
+        "icon": {
+          "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/nailsalon_",
+          "mapPrefix": "https://ss3.4sqi.net/img/categories_map/shops/salon_barber",
+          "suffix": ".png"
+        },
+        "primary": true
+      }
+    ],
+    "verified": false,
+    "stats": { "tipCount": 0, "usersCount": 1, "checkinsCount": 1 },
+    "allowMenuUrlEdit": true,
+    "beenHere": { "lastCheckinExpiredAt": 0 },
+    "specials": { "count": 0, "items": [] },
+    "hereNow": { "count": 0, "summary": "Nobody here", "groups": [] },
+    "referralId": "v-1627808788",
+    "venueChains": [],
+    "hasPerk": false
+  },
+  {
+    "id": "5d25d0d8c9890e002f447e4f",
+    "name": "Elenas nagel & hudvård",
+    "contact": {},
+    "location": {
+      "lat": 59.375377,
+      "lng": 17.940555,
+      "labeledLatLngs": [
+        { "label": "display", "lat": 59.375377, "lng": 17.940555 }
+      ],
+      "distance": 230,
+      "postalCode": "174 58",
+      "cc": "SE",
+      "city": "Sundbyberg",
+      "state": "Stockholm",
+      "country": "Sweden",
+      "contextLine": "Sundbyberg",
+      "contextGeoId": -1246827572,
+      "formattedAddress": [
+        "<span itemprop=\"postalCode\">174 58</span> <span itemprop=\"addressLocality\">Sundbyberg</span>"
+      ]
+    },
+    "canonicalUrl": "https://foursquare.com/v/elenas-nagel--hudv%C3%A5rd/5d25d0d8c9890e002f447e4f",
+    "canonicalPath": "/v/elenas-nagel--hudv%C3%A5rd/5d25d0d8c9890e002f447e4f",
+    "categories": [
+      {
+        "id": "4f04aa0c2fb6e1c99f3db0b8",
+        "name": "Nail Salon",
+        "pluralName": "Nail Salons",
+        "shortName": "Nail Salon",
+        "icon": {
+          "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/nailsalon_",
+          "mapPrefix": "https://ss3.4sqi.net/img/categories_map/shops/salon_barber",
+          "suffix": ".png"
+        },
+        "primary": true
+      }
+    ],
+    "verified": false,
+    "stats": { "tipCount": 0, "usersCount": 1, "checkinsCount": 18 },
+    "allowMenuUrlEdit": true,
+    "beenHere": { "lastCheckinExpiredAt": 0 },
+    "specials": { "count": 0, "items": [] },
+    "hereNow": { "count": 0, "summary": "Nobody here", "groups": [] },
+    "referralId": "v-1627808788",
+    "venueChains": [],
+    "hasPerk": false
+  },
+  {
+    "id": "4e64e46de4cdf1e2c054ecc0",
+    "name": "Rissne Centrum",
+    "contact": {},
+    "location": {
+      "lat": 59.3758297023727,
+      "lng": 17.940266755681566,
+      "labeledLatLngs": [
+        {
+          "label": "display",
+          "lat": 59.3758297023727,
+          "lng": 17.940266755681566
+        }
+      ],
+      "distance": 280,
+      "cc": "SE",
+      "city": "Sundbyberg",
+      "state": "Stockholm",
+      "country": "Sweden",
+      "contextLine": "Sundbyberg",
+      "contextGeoId": 9151314444206005154,
+      "formattedAddress": [
+        "<span itemprop=\"addressLocality\">Sundbyberg</span>"
+      ]
+    },
+    "canonicalUrl": "https://foursquare.com/v/rissne-centrum/4e64e46de4cdf1e2c054ecc0",
+    "canonicalPath": "/v/rissne-centrum/4e64e46de4cdf1e2c054ecc0",
+    "categories": [
+      {
+        "id": "4d4b7105d754a06377d81259",
+        "name": "Outdoors & Recreation",
+        "pluralName": "Outdoors & Recreation",
+        "shortName": "Outdoors & Recreation",
+        "icon": {
+          "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/default_",
+          "mapPrefix": "https://ss3.4sqi.net/img/categories_map/parks_outdoors/default",
+          "suffix": ".png"
+        },
+        "primary": true
+      }
+    ],
+    "verified": false,
+    "stats": { "tipCount": 1, "usersCount": 266, "checkinsCount": 1520 },
+    "beenHere": { "lastCheckinExpiredAt": 0 },
+    "specials": { "count": 0, "items": [] },
+    "hereNow": { "count": 0, "summary": "Nobody here", "groups": [] },
+    "referralId": "v-1627808788",
+    "venueChains": [],
+    "hasPerk": false
+  },
+  {
+    "id": "4cb5ede155af224b0c2e967e",
+    "name": "Rissne Video",
+    "contact": {},
+    "location": {
+      "address": "Rissne Torg 1",
+      "lat": 59.375889,
+      "lng": 17.940754,
+      "labeledLatLngs": [
+        { "label": "display", "lat": 59.375889, "lng": 17.940754 }
+      ],
+      "distance": 270,
+      "postalCode": "174 57",
+      "cc": "SE",
+      "city": "Sundbyberg",
+      "state": "Stockholm",
+      "country": "Sweden",
+      "contextLine": "Sundbyberg",
+      "contextGeoId": -1036353034,
+      "formattedAddress": [
+        "<span itemprop=\"streetAddress\">Rissne Torg 1</span>",
+        "<span itemprop=\"postalCode\">174 57</span> <span itemprop=\"addressLocality\">Sundbyberg</span>"
+      ]
+    },
+    "canonicalUrl": "https://foursquare.com/v/rissne-video/4cb5ede155af224b0c2e967e",
+    "canonicalPath": "/v/rissne-video/4cb5ede155af224b0c2e967e",
+    "categories": [
+      {
+        "id": "4bf58dd8d48988d172941735",
+        "name": "Post Office",
+        "pluralName": "Post Offices",
+        "shortName": "Post Office",
+        "icon": {
+          "prefix": "https://ss3.4sqi.net/img/categories_v2/building/postoffice_",
+          "mapPrefix": "https://ss3.4sqi.net/img/categories_map/building/postoffice",
+          "suffix": ".png"
+        },
+        "primary": true
+      }
+    ],
+    "verified": false,
+    "stats": { "tipCount": 0, "usersCount": 14, "checkinsCount": 66 },
+    "beenHere": { "lastCheckinExpiredAt": 0 },
+    "specials": { "count": 0, "items": [] },
+    "hereNow": { "count": 0, "summary": "Nobody here", "groups": [] },
+    "referralId": "v-1627808788",
+    "venueChains": [],
+    "hasPerk": false
+  },
+  {
+    "id": "574eb0ac498ebb08c4cc5614",
+    "name": "Duvboskogen",
+    "contact": {},
+    "location": {
+      "lat": 59.37348457894882,
+      "lng": 17.947776317596436,
+      "labeledLatLngs": [
+        {
+          "label": "display",
+          "lat": 59.37348457894882,
+          "lng": 17.947776317596436
+        }
+      ],
+      "distance": 261,
+      "cc": "SE",
+      "country": "Sweden",
+      "contextLine": "",
+      "contextGeoId": -1581887876,
+      "formattedAddress": [""]
+    },
+    "canonicalUrl": "https://foursquare.com/v/duvboskogen/574eb0ac498ebb08c4cc5614",
+    "canonicalPath": "/v/duvboskogen/574eb0ac498ebb08c4cc5614",
+    "categories": [
+      {
+        "id": "52e81612bcbc57f1066b7a23",
+        "name": "Forest",
+        "pluralName": "Forests",
+        "shortName": "Forest",
+        "icon": {
+          "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/default_",
+          "mapPrefix": "https://ss3.4sqi.net/img/categories_map/parks_outdoors/default",
+          "suffix": ".png"
+        },
+        "primary": true
+      }
+    ],
+    "verified": false,
+    "stats": { "tipCount": 0, "usersCount": 6, "checkinsCount": 21 },
+    "beenHere": { "lastCheckinExpiredAt": 0 },
+    "specials": { "count": 0, "items": [] },
+    "hereNow": { "count": 0, "summary": "Nobody here", "groups": [] },
+    "referralId": "v-1627808788",
+    "venueChains": [],
+    "hasPerk": false
+  },
+  {
+    "id": "5b7d060789b06a002c9237c5",
+    "name": "Internationella Engelska Skolan",
+    "contact": {},
+    "location": {
+      "address": "Rissneleden 136",
+      "lat": 59.37374,
+      "lng": 17.928726,
+      "labeledLatLngs": [
+        { "label": "display", "lat": 59.37374, "lng": 17.928726 }
+      ],
+      "distance": 820,
+      "postalCode": "163 43",
+      "cc": "SE",
+      "city": "Sundbyberg",
+      "state": "Stockholm",
+      "country": "Sweden",
+      "contextLine": "Sundbyberg",
+      "contextGeoId": -916112666,
+      "formattedAddress": [
+        "<span itemprop=\"streetAddress\">Rissneleden 136</span>",
+        "<span itemprop=\"postalCode\">163 43</span> <span itemprop=\"addressLocality\">Sundbyberg</span>"
+      ]
+    },
+    "canonicalUrl": "https://foursquare.com/v/internationella-engelska-skolan/5b7d060789b06a002c9237c5",
+    "canonicalPath": "/v/internationella-engelska-skolan/5b7d060789b06a002c9237c5",
+    "categories": [
+      {
+        "id": "4bf58dd8d48988d13b941735",
+        "name": "School",
+        "pluralName": "Schools",
+        "shortName": "School",
+        "icon": {
+          "prefix": "https://ss3.4sqi.net/img/categories_v2/building/school_",
+          "mapPrefix": "https://ss3.4sqi.net/img/categories_map/building/default",
+          "suffix": ".png"
+        },
+        "primary": true
+      }
+    ],
+    "verified": false,
+    "stats": { "tipCount": 0, "usersCount": 1, "checkinsCount": 243 },
+    "venueRatingBlacklisted": true,
+    "beenHere": { "lastCheckinExpiredAt": 0 },
+    "specials": { "count": 0, "items": [] },
+    "hereNow": { "count": 0, "summary": "Nobody here", "groups": [] },
+    "referralId": "v-1627808788",
+    "venueChains": [],
+    "hasPerk": false
+  }
+]

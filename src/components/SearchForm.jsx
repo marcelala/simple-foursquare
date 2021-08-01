@@ -4,9 +4,12 @@ import { TextField, FormControl, Button, Grid } from "@material-ui/core";
 import Search from "@material-ui/icons/Search";
 
 //project files
+import GeolocationHook from "./GeolocationHook";
+
 
 export default function SearchForm({ getResults }) {
     //local state
+//const { latitude: currentLatitude, longitude: currentLongitude, location: currentLocation } = GeolocationHook();
   const [input, setInput] = useState({
     latitude: "",
     longitude: "",
@@ -27,6 +30,19 @@ export default function SearchForm({ getResults }) {
     }, setQuery(input.latitude+ "," +input.longitude));
     console.log(query);
   };
+
+  /*handleClick(e){
+    e.preventDefault();
+    const { latitude: currentLatitude, longitude: currentLongitude, location: currentLocation } = GeolocationHook();
+    setQuery(currentLocation)
+    setInput({
+      ...input,
+      [latitude]: currentLatitude,
+      [longitude]: currentLongitude,
+    });
+
+  };*/
+
 
   return (
       <Grid item>
@@ -76,8 +92,26 @@ export default function SearchForm({ getResults }) {
               Search
             </Button>
           </Grid>
-              </form>
+        </form>
+        <Grid item>
+          <div className="geolocation">
+            <Button
+              type="submit"
+              variant="contained"
+              color="secondary"
+              component="span"
+              size="large"
+              margin="normal"
+              //onClick={handleClick}
+            >
+              Get your coordinates
+            </Button>
+          </div>
+        </Grid>
+        <div>
+        </div>
     </section>
               </Grid>
   );
 }
+        //{currentLocation && <p>Current Location: {currentLocation}</p>}

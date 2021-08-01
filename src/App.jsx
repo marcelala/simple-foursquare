@@ -9,13 +9,12 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import SearchForm from "./components/SearchForm";
-//import BackupData from './assets/BackupData.json'
+import BackupData from './assets/BackupData.json'
 import SearchResult from "./components/SearchResult";
 
 
 export default function App() {
   //state
-  const { latitude: currentLatitude, longitude: currentLongitude, location: currentLocation } = GeolocationHook();
   const [results, setResults] = useState([]);
   const [location, setLocation] = useState("");
   const [status, setStatus] = useState(0); // 0 = "loading", 1 = "data ok", 2 = "data error"
@@ -34,12 +33,12 @@ export default function App() {
     };
     axios.get(endPoint + new URLSearchParams(params))
       .then(response => setResults(response.data.response.venues))
-      //.catch((error) => onFail(error));
+      .catch((error) => onFail(error));
   };
 
   function onFail(error) {
     if (DEBUG_MODE) {
-      //setResults(BackupData);
+      setResults(BackupData);
       setStatus(1);
     } else {
       setStatus(2);
@@ -56,22 +55,6 @@ export default function App() {
           <Hero />
         </Grid>
         <SearchForm getResults={getResults} />
-        <Grid item>
-          <div className="geolocation">
-            <Button
-              type="submit"
-              variant="contained"
-              color="secondary"
-              component="span"
-              size="large"
-              margin="normal"
-            >
-              Get your coordinates
-            </Button>
-            {currentLatitude && <p>Latitude: {currentLatitude}</p>}
-            {currentLongitude && <p>Longitude: {currentLongitude}</p>}
-            {currentLocation && <p>Current Location: {currentLocation}</p>}          </div>
-        </Grid>
         <SearchResult results={results}/>
       </Grid>
       <Footer />
