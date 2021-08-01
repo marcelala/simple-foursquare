@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardContent: {
     flexGrow: 1,
+    justifySelf: "center",
   },
 }));
 //project files
@@ -37,12 +38,13 @@ export default function VenueCard({ venue }) {
           title="Image title"
         />
         <CardContent className={classes.cardContent}>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom align="center" variant="h5" component="h2">
             {name}
           </Typography>
-          {location.distance && <Typography>Distance: {location.distance} meters</Typography>}
-          <Typography variant="body2" color="textSecondary" component="p">Coordinates: </Typography>
-          <Typography >{location.lat},{location.lng}</Typography>
+          {location.distance && <Typography align="center" component="p">Distance: {location.distance} meters</Typography>}
+          <br/>
+          <Typography Typography variant="body2" color="textSecondary" component="p" >Lat {location.lat} </Typography>
+          <Typography Typography variant="body2" color="textSecondary" component="p" >Lng {location.lng}</Typography>
           <Typography variant="body2" color="textSecondary" component="p">{location.address}</Typography>
           <Typography variant="body2" color="textSecondary" component="p">{location.postalCode}</Typography>
           <Typography variant="body2" color="textSecondary" component="p">{location.city}, {location.country}</Typography>
