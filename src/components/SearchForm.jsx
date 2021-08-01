@@ -23,7 +23,23 @@ export default function SearchForm({ getResults,handleClick }) {
   const onlyDigits = /^-?(([-+]?)([\d]{1,3})((\.)(\d+))?)/.test(input);
     return onlyDigits
   }
-
+//Validation of the input, needs more work
+  /*
+  const getErrors = (input.latitude, input.longitude) => {
+    const result = {};
+    if (!input.latitude) {
+      result.input.latitude = "Latitude is required.";
+    } else if (!validInput(input.latitude)) {
+      result.input.latitude = "Longitude may only contain numbers and .";
+    }
+    if (!input.longitude) {
+      result.input.longitude = "Longitude is required.";
+    } else if (!validInput(input.longitude)) {
+      result.input.longitude = "Longitude may only contain numbers and .";
+    }
+    return result;
+  };
+  */
   //controlled form
   const handleChange = (event) => {
     event.preventDefault();
