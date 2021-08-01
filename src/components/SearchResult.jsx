@@ -28,7 +28,7 @@ export default function SearchResult( {results}) {
         <div>
             <Container className={classes.cardGrid} maxWidth="md">
                 <Grid container spacing={4}>
-                    {sortedVenueCards.length > 0?  sortedVenueCards : <p> No venues were found...</p>}
+                    {sortedVenueCards?  sortedVenueCards : <p> No venues were found...</p>}
                 </Grid>
             </Container>
         </div>

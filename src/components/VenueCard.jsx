@@ -43,8 +43,8 @@ export default function VenueCard({ venue }) {
           </Typography>
           {location.distance && <Typography align="center" component="p">Distance: {location.distance} meters</Typography>}
           <br/>
-          <Typography Typography variant="body2" color="textSecondary" component="p" >Lat {location.lat} </Typography>
-          <Typography Typography variant="body2" color="textSecondary" component="p" >Lng {location.lng}</Typography>
+          <Typography variant="body2" color="textSecondary" component="p" >Lat {location.lat} </Typography>
+          <Typography variant="body2" color="textSecondary" component="p" >Lng {location.lng}</Typography>
           <Typography variant="body2" color="textSecondary" component="p">{location.address}</Typography>
           <Typography variant="body2" color="textSecondary" component="p">{location.postalCode}</Typography>
           <Typography variant="body2" color="textSecondary" component="p">{location.city}, {location.country}</Typography>

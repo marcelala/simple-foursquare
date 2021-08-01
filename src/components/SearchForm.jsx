@@ -10,15 +10,20 @@ import GeolocationHook from "./GeolocationHook";
 export default function SearchForm({ getResults,handleClick }) {
     //local state
   const { currentLatitude: currentLatitude, currentLongitude: currentLongitude, location: currentLocation } = GeolocationHook();
+  
   const [input, setInput] = useState({
     latitude: "",
     longitude: "",
   });
+// format lat,long
   const [query, setQuery] = useState([]);
-
-  const [errors, setErrors] = useState({});
-
+ 
   //methods
+  const validInput = (input) => {
+  const onlyDigits = /^-?(([-+]?)([\d]{1,3})((\.)(\d+))?)/.test(input);
+    return onlyDigits
+  }
+
   //controlled form
   const handleChange = (event) => {
     event.preventDefault();
@@ -27,18 +32,17 @@ export default function SearchForm({ getResults,handleClick }) {
       ...input,
       [name]: value,
     }, setQuery(input.latitude+ "," +input.longitude));
-    console.log(query);
   };
-
-
+//sets the input values on the form and query lat,long
+//with the current position
   handleClick=(e)=>{
     e.preventDefault();
     setQuery(currentLocation);
     setInput({
-    ...input,
+      ...input,
       latitude: currentLatitude,
       longitude: currentLongitude
-    })
+    });
       };
 
   return (
@@ -88,20 +92,21 @@ export default function SearchForm({ getResults,handleClick }) {
             >
               Search
             </Button>
+          
           </Grid>
         </form>
         <Grid item>
           <div className="geolocation">
             <Button
               type="submit"
-              variant="contained"
-              color="secondary"
+              variant="outlined"
+              color="primary"
               component="span"
               size="large"
               margin="normal"
               onClick={handleClick}
             >
-              Get your coordinates
+              Add current coordinates
             </Button>
           </div>
           </Grid>
@@ -111,4 +116,3 @@ export default function SearchForm({ getResults,handleClick }) {
           </Grid>
   );
 }
-        //{currentLocation && <p>Current Location: {currentLocation}</p>}
