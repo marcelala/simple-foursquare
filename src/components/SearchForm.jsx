@@ -5,13 +5,15 @@ import Search from "@material-ui/icons/Search";
 
 //project files
 
-export default function SearchForm({ query, setQuery,getResults }) {
+export default function SearchForm({ getResults }) {
     //local state
   const [input, setInput] = useState({
     latitude: "",
     longitude: "",
   });
-  const{latitude,longitude}= input
+  const { latitude, longitude } = input
+  const [query, setQuery] = useState([]);
+
   const [errors, setErrors] = useState({});
 
   //methods
@@ -22,28 +24,14 @@ export default function SearchForm({ query, setQuery,getResults }) {
     setInput({
       ...input,
       [name]: value,
-    });
-    console.log(input);
+    }, setQuery(input.latitude+ "," +input.longitude));
+    console.log(query);
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if ((input==!null)) {
-      setQuery(latitude+ "," +longitude);
-      console.log(query);
-      //await getResults.bind(null,query);
-    }
-  };
-
-  /*const isValid = () => {
-    Object.values(errors).every((x) => x === "");
-  };*/
-
-  //const getResults = () => {};
 
   return (
       <Grid item>
               <section>
-        <form className="search-form" onSubmit={handleSubmit}>
+        <form className="search-form" onSubmit={getResults.bind(null,query)}>
           <FormControl>
             <Grid item>
               <TextField
@@ -83,7 +71,7 @@ export default function SearchForm({ query, setQuery,getResults }) {
               size="large"
               margin="normal"
               startIcon={<Search />}
-              onClick={handleSubmit}
+              onClick= {getResults.bind(null,query)}
             >
               Search
             </Button>
