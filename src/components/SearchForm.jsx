@@ -7,14 +7,13 @@ import Search from "@material-ui/icons/Search";
 import GeolocationHook from "./GeolocationHook";
 
 
-export default function SearchForm({ getResults }) {
+export default function SearchForm({ getResults,handleClick }) {
     //local state
-//const { latitude: currentLatitude, longitude: currentLongitude, location: currentLocation } = GeolocationHook();
+  const { currentLatitude: currentLatitude, currentLongitude: currentLongitude, location: currentLocation } = GeolocationHook();
   const [input, setInput] = useState({
     latitude: "",
     longitude: "",
   });
-  const { latitude, longitude } = input
   const [query, setQuery] = useState([]);
 
   const [errors, setErrors] = useState({});
@@ -31,18 +30,16 @@ export default function SearchForm({ getResults }) {
     console.log(query);
   };
 
-  /*handleClick(e){
+
+  handleClick=(e)=>{
     e.preventDefault();
-    const { latitude: currentLatitude, longitude: currentLongitude, location: currentLocation } = GeolocationHook();
-    setQuery(currentLocation)
+    setQuery(currentLocation);
     setInput({
-      ...input,
-      [latitude]: currentLatitude,
-      [longitude]: currentLongitude,
-    });
-
-  };*/
-
+    ...input,
+      latitude: currentLatitude,
+      longitude: currentLongitude
+    })
+      };
 
   return (
       <Grid item>
@@ -55,12 +52,12 @@ export default function SearchForm({ getResults }) {
                 name="latitude"
                 label="What's your latitude?"
                 type="text"
-                value={latitude}
+                value={input.latitude}
                 margin="normal"
                 variant="outlined"
                 helperText="Please type your latitude above"
                 required
-                onChange={handleChange}
+                onChange={handleChange.bind(input)}
               />
             </Grid>
             <Grid item>
@@ -69,12 +66,12 @@ export default function SearchForm({ getResults }) {
                 name="longitude"
                 label="What's your longitude?"
                 type="text"
-                value={longitude}
+                value={input.longitude}
                 variant="outlined"
                 margin="normal"
                 helperText="Please type your longitude above"
                 required
-                onChange={handleChange}
+                onChange={handleChange.bind(input)}
               />
             </Grid>
           </FormControl>
@@ -102,7 +99,7 @@ export default function SearchForm({ getResults }) {
               component="span"
               size="large"
               margin="normal"
-              //onClick={handleClick}
+              onClick={handleClick}
             >
               Get your coordinates
             </Button>

@@ -33,7 +33,7 @@ export default function App() {
     };
     axios.get(endPoint + new URLSearchParams(params))
       .then(response => setResults(response.data.response.venues))
-      .catch((error) => onFail(error));
+      //.catch((error) => onFail(error));
   };
 
   function onFail(error) {

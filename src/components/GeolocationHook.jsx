@@ -6,11 +6,15 @@ const GeolocationHook = () => {
 
   // store error message in state
   const [error, setError] = useState();
-    
+  const [currentLatitude, setLatitude] = useState("");
+  const [currentLongitude, setLongitude] = useState("");
+  
   const handleSuccess = (position) => {
-    const currentLatitude = position.coords.latitude;
-    const currentLongitude = position.coords.longitude;
-    setLocation(currentLatitude+","+currentLongitude);
+    const latitude = (position.coords.latitude).toString();
+    const longitude = (position.coords.longitude).toString();
+    setLatitude(latitude);
+    setLongitude(longitude);
+    setLocation(latitude + "," + longitude);
     };
   
     const handleError = (error) => {
@@ -26,7 +30,7 @@ const GeolocationHook = () => {
       // Call Geolocation API
     geolocation.getCurrentPosition(handleSuccess, handleError);
   }, []);
-    return { location, error };
+    return { location,currentLatitude, currentLongitude, error };
 };
   
 export default GeolocationHook;
